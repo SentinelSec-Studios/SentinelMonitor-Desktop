@@ -1,0 +1,54 @@
+{
+  "name": "SentinelMonitor-Desktop",
+  "version": "0.0.1",
+  "description": "SentinelMonitor for Desktop",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "npx electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SentinelSec-Development/SentinelMonitor-Desktop.git"
+  },
+  "author": "veast-network",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SentinelSec-Development/SentinelMonitor-Desktop/issues"
+  },
+  "homepage": "https://github.com/SentinelSec-Development/SentinelMonitor-Desktop#readme",
+  "build": {
+    "appId": "SentinelMonitor Desktop",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^18.0.4",
+    "electron-builder": "^23.0.3"
+  }
+}
